@@ -71,5 +71,9 @@
         <file>images/table/table.png</file>
         <file>images/buttons/buttonBet.png</file>
         <file>images/buttons/ButtonBetCover.png</file>
+        <file>sound/Draw.mp3</file>
+        <file>sound/Lost.mp3</file>
+        <file>sound/Song.mp3</file>
+        <file>sound/Won.mp3</file>
     </qresource>
 </RCC>

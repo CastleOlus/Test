@@ -8,6 +8,9 @@
 #include <game.h>
 #include "ui_mainwindow.h"
 #include <QMessageBox>
+#include <QAudioOutput>
+#include <QMediaPlayer>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

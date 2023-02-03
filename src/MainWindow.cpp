@@ -13,13 +13,26 @@ MainWindow::MainWindow(QWidget *parent)
 
     hideMoneyBtn();
     ui->label_currently_money->clear();
+
+
+    QMediaPlayer* player = new QMediaPlayer;
+    QAudioOutput* audioOutput = new QAudioOutput;
+     player->setAudioOutput(audioOutput);
+     player->setSource(QUrl("qrc:/sound/Song.mp3"));
+     audioOutput->setVolume(30);
+     player->setLoops(QMediaPlayer::Infinite);
+     player->play();
+
+
+
+
 }
+
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
-
 
 void MainWindow::on_playBtn_clicked()
 {
@@ -56,6 +69,8 @@ void MainWindow::on_playBtn_clicked()
     ui->label_card_croupier4->clear();
     ui->label_card_croupier5->clear();
     ui->label_card_croupier6->clear();
+
+
 
 }
 
@@ -119,7 +134,7 @@ void MainWindow::on_standBtn_clicked()
             }
             else if((player1.howManyCardsInHand() == 2 && player1.countPoints() == 21) && (croupier.countPoints() != 21 || croupier.howManyCardsInHand() != 2)){
                 player1.showHandDeck(2,ui);
-                ui->label_points_player->setText(QString::number(player1.countPoints()) + QString(" Punktow"));
+                ui->label_points_player->setText(QString::number(player1.countPoints()) + QString(" Points"));
                 ui->label_result->setText(QString("BlackJack"));
                 player1.setCurrentlyMoney(player1.getCurrentlyMoney() + 2.5* player1.getMoneyOnBet());
                 ui->label_currently_money->setText((QString("You have ")+ QString::number(player1.getCurrentlyMoney())) + QString(" $"));

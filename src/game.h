@@ -3,6 +3,8 @@
 
 #include "croupier.h"
 #include "player.h"
+#include <QAudioOutput>
+#include <QMediaPlayer>
 
 class Game: public Croupier, public Player
 {
