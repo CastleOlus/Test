@@ -19,9 +19,10 @@ MainWindow::MainWindow(QWidget *parent)
     QAudioOutput* audioOutput = new QAudioOutput;
      player->setAudioOutput(audioOutput);
      player->setSource(QUrl("qrc:/sound/Song.mp3"));
-     audioOutput->setVolume(30);
+     audioOutput->setVolume(10);
      player->setLoops(QMediaPlayer::Infinite);
      player->play();
+
 
 
 
