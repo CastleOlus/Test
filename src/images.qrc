@@ -75,5 +75,6 @@
         <file>sound/Lost.mp3</file>
         <file>sound/Song.mp3</file>
         <file>sound/Won.mp3</file>
+        <file>sound/Click.mp3</file>
     </qresource>
 </RCC>

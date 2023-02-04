@@ -69,6 +69,13 @@ void MainWindow::on_playBtn_clicked()
     ui->label_card_croupier4->clear();
     ui->label_card_croupier5->clear();
     ui->label_card_croupier6->clear();
+    //Click Sound
+    QMediaPlayer* player = new QMediaPlayer;
+    QAudioOutput* audioOutput = new QAudioOutput;
+     player->setAudioOutput(audioOutput);
+     player->setSource(QUrl("qrc:/sound/Click.mp3"));
+     audioOutput->setVolume(30);
+     player->play();
 
 
 
@@ -98,10 +105,23 @@ void MainWindow::on_betBtn_clicked()
 
     ui->hitBtn->setVisible(true);
     ui->standBtn->setVisible(true);
+    //Click Sound
+    QMediaPlayer* player = new QMediaPlayer;
+    QAudioOutput* audioOutput = new QAudioOutput;
+     player->setAudioOutput(audioOutput);
+     player->setSource(QUrl("qrc:/sound/Click.mp3"));
+     audioOutput->setVolume(30);
+     player->play();
 }
 
 void MainWindow::on_standBtn_clicked()
-{
+{       //Click Sound
+    QMediaPlayer* player = new QMediaPlayer;
+    QAudioOutput* audioOutput = new QAudioOutput;
+     player->setAudioOutput(audioOutput);
+     player->setSource(QUrl("qrc:/sound/Click.mp3"));
+     audioOutput->setVolume(30);
+     player->play();
     croupier.showHandDeck(2, ui);
     ui->label_points_croupier->setText(QString::number(croupier.countPoints()) + QString(" Points"));
 
@@ -147,6 +167,13 @@ void MainWindow::on_standBtn_clicked()
 }
 
 void MainWindow::on_hitBtn_clicked(){
+    //Click Sound
+    QMediaPlayer* player = new QMediaPlayer;
+    QAudioOutput* audioOutput = new QAudioOutput;
+     player->setAudioOutput(audioOutput);
+     player->setSource(QUrl("qrc:/sound/Click.mp3"));
+     audioOutput->setVolume(30);
+     player->play();
     hits++;
     player1.addCards(1 , &decks);
     player1.showHandDeck(2+hits,ui);
@@ -160,6 +187,13 @@ void MainWindow::on_hitBtn_clicked(){
 
 
 void MainWindow::on_exit_Btn_clicked(){
+    //Click Sound
+    QMediaPlayer* player = new QMediaPlayer;
+    QAudioOutput* audioOutput = new QAudioOutput;
+     player->setAudioOutput(audioOutput);
+     player->setSource(QUrl("qrc:/sound/Click.mp3"));
+     audioOutput->setVolume(30);
+     player->play();
     this->close();
     QString information = "You finished the game with " + QString::number(player1.getCurrentlyMoney()) + "$";
     QMessageBox::information(nullptr,"Info",information);
@@ -178,6 +212,7 @@ void MainWindow::newRound(){
 
 void MainWindow::hideMoneyBtn(){
 
+
     ui->money1000Btn->setVisible(false);
     ui->money10Btn->setVisible(false);
     ui->money20Btn->setVisible(false);
@@ -193,7 +228,13 @@ void MainWindow::hideMoneyBtn(){
 }
 
 void MainWindow::on_instrBtn_clicked()
-{
+{       //Click Sound
+    QMediaPlayer* player = new QMediaPlayer;
+    QAudioOutput* audioOutput = new QAudioOutput;
+     player->setAudioOutput(audioOutput);
+     player->setSource(QUrl("qrc:/sound/Click.mp3"));
+     audioOutput->setVolume(30);
+     player->play();
     ui->label_instruction->setText(QString("                                                                                         BlackJack Rules\n\n"
                                "Player Plays Against the Dealer. The winner is whoever is closer to 21 points, or gets the Black Jack\n"
                                "that is, an Ace and a '10', or another figure scored for 10 points. When someone scores more than 21 points,\n"
@@ -209,49 +250,100 @@ void MainWindow::on_instrBtn_clicked()
 }
 
 void MainWindow::on_money10Btn_clicked()
-{
+{       //Click Sound
+    QMediaPlayer* player = new QMediaPlayer;
+    QAudioOutput* audioOutput = new QAudioOutput;
+     player->setAudioOutput(audioOutput);
+     player->setSource(QUrl("qrc:/sound/Click.mp3"));
+     audioOutput->setVolume(30);
+     player->play();
     player1.bet(10, ui);
     ui->betBtn->setVisible(true);
 }
 
 void MainWindow::on_money20Btn_clicked()
-{
+{       //Click Sound
+    QMediaPlayer* player = new QMediaPlayer;
+    QAudioOutput* audioOutput = new QAudioOutput;
+     player->setAudioOutput(audioOutput);
+     player->setSource(QUrl("qrc:/sound/Click.mp3"));
+     audioOutput->setVolume(30);
+     player->play();
     player1.bet(20, ui);
     ui->betBtn->setVisible(true);
 }
 
 void MainWindow::on_money50Btn_clicked()
-{
+{       //Click Sound
+    QMediaPlayer* player = new QMediaPlayer;
+    QAudioOutput* audioOutput = new QAudioOutput;
+     player->setAudioOutput(audioOutput);
+     player->setSource(QUrl("qrc:/sound/Click.mp3"));
+     audioOutput->setVolume(30);
+     player->play();
     player1.bet(50, ui);
     ui->betBtn->setVisible(true);
 }
 
 void MainWindow::on_money100Btn_clicked()
-{
+{       //Click Sound
+    QMediaPlayer* player = new QMediaPlayer;
+    QAudioOutput* audioOutput = new QAudioOutput;
+     player->setAudioOutput(audioOutput);
+     player->setSource(QUrl("qrc:/sound/Click.mp3"));
+     audioOutput->setVolume(30);
+     player->play();
     player1.bet(100, ui);
     ui->betBtn->setVisible(true);
 }
 
 void MainWindow::on_money200Btn_clicked()
-{
+{       //Click Sound
+    QMediaPlayer* player = new QMediaPlayer;
+    QAudioOutput* audioOutput = new QAudioOutput;
+     player->setAudioOutput(audioOutput);
+     player->setSource(QUrl("qrc:/sound/Click.mp3"));
+     audioOutput->setVolume(30);
+     player->play();
     player1.bet(200, ui);
     ui->betBtn->setVisible(true);
 }
 
 void MainWindow::on_money300Btn_clicked()
 {
+    //Click Sound
+    QMediaPlayer* player = new QMediaPlayer;
+    QAudioOutput* audioOutput = new QAudioOutput;
+     player->setAudioOutput(audioOutput);
+     player->setSource(QUrl("qrc:/sound/Click.mp3"));
+     audioOutput->setVolume(30);
+     player->play();
     player1.bet(300, ui);
     ui->betBtn->setVisible(true);
 }
 
 void MainWindow::on_money500Btn_clicked()
 {
+    //Click Sound
+    QMediaPlayer* player = new QMediaPlayer;
+    QAudioOutput* audioOutput = new QAudioOutput;
+     player->setAudioOutput(audioOutput);
+     player->setSource(QUrl("qrc:/sound/Click.mp3"));
+     audioOutput->setVolume(30);
+     player->play();
     player1.bet(500, ui);
     ui->betBtn->setVisible(true);
 }
 
 void MainWindow::on_money1000Btn_clicked()
 {
+    //Click Sound
+    QMediaPlayer* player = new QMediaPlayer;
+    QAudioOutput* audioOutput = new QAudioOutput;
+     player->setAudioOutput(audioOutput);
+     player->setSource(QUrl("qrc:/sound/Click.mp3"));
+     audioOutput->setVolume(30);
+     player->play();
     player1.bet(1000, ui);
     ui->betBtn->setVisible(true);
 }
