@@ -1,4 +1,6 @@
 #include <player.h>
+#include <QtWidgets/QGraphicsOpacityEffect>
+#include <QPropertyAnimation>
 
 Player::Player() {
     handPlayer = {};
@@ -29,8 +31,14 @@ void Player::addCards(int count, Deck* decks) {
     decks->removeCardsFromDeck(count);
 }
 
-void Player::showHandDeck(int count, Ui::MainWindow *ui) {
+void Player::showHandDeck(int count, Ui::MainWindow *ui)
+{
+
+
+
     std::vector<QLabel*> labels = {ui->label_card_player1, ui->label_card_player2, ui->label_card_player3,ui->label_card_player4,ui->label_card_player5,ui->label_card_player6};
+
+
 
     for(int i = 0; i < count;i ++) {
             if (i == 6) {
@@ -38,7 +46,19 @@ void Player::showHandDeck(int count, Ui::MainWindow *ui) {
                 exit(0);
             }
             labels[i]->setPixmap(photos[handPlayer[i]]);
+
+
         }
+    //fade in player carts
+    QGraphicsOpacityEffect *effect = new QGraphicsOpacityEffect(this);
+    labels[count]->setGraphicsEffect(effect);
+    QPropertyAnimation *aniamteCard = new QPropertyAnimation(effect,"opacity");
+    aniamteCard->setDuration(1200);
+    aniamteCard->setStartValue(0);
+    aniamteCard->setEndValue(1);
+    aniamteCard->setEasingCurve(QEasingCurve::InBack);
+    aniamteCard->start(QPropertyAnimation::DeleteWhenStopped);
+
 }
 
 int Player::countPoints() {
@@ -90,4 +110,5 @@ size_t Player::howManyCardsInHand(){
     size_t size = handPlayer.size();
     return size;
 }
+
 

@@ -1,5 +1,4 @@
 #include "deck.h"
-
 Deck::Deck() {
     primaryDeck = {
         "Two-Spades","Two-Hearts","Two-Clubs","Two-Diamonds",

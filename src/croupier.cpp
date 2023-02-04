@@ -1,5 +1,6 @@
 #include "croupier.h"
-
+#include <QtWidgets/QGraphicsOpacityEffect>
+#include <QPropertyAnimation>
 Croupier::Croupier() {
     this->handCroupier = {};
     this-> how_many_as = 0;
@@ -32,6 +33,16 @@ void Croupier::showHandDeck(int count, Ui::MainWindow *ui) {
         }
         labels[i]->setPixmap(photos[handCroupier[i]]);
     }
+    //fade in player carts
+    QGraphicsOpacityEffect *effect = new QGraphicsOpacityEffect(this);
+    labels[count]->setGraphicsEffect(effect);
+    QPropertyAnimation *aniamteCard = new QPropertyAnimation(effect,"opacity");
+    aniamteCard->setDuration(1200);
+    aniamteCard->setStartValue(0);
+    aniamteCard->setEndValue(1);
+    aniamteCard->setEasingCurve(QEasingCurve::InBack);
+    aniamteCard->start(QPropertyAnimation::DeleteWhenStopped);
+
 }
 
 int Croupier::countPoints() {
